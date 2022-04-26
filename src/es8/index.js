@@ -29,3 +29,29 @@ console.log(string.padEnd(13, '-----'))
 const obj = {
     name: 'Oscar', //<-- ','
 }
+
+const helloWorld = () => {
+    return new Promise((resolve, reject) =>{
+        (true)
+        ? setTimeout(()=> resolve('Hello World'), 3000)
+        : reject(new Error('Test Error'))
+    })
+}
+
+const hellAsync = async () =>{
+    const hello = await helloWorld();
+    console.log(hello);
+}
+
+hellAsync();
+
+const anotherFunction = async () =>{
+    try {
+        const hello = await helloWorld();
+        console.log(hello);
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+anotherFunction();
